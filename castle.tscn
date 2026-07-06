@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://n1h855te0v0y"]
+
+[node name="Castle" type="Node2D" unique_id=1090205509]
+
+[node name="ParallaxBackground" type="Node2D" parent="." unique_id=1403351972]
+
+[node name="Sky" type="Parallax2D" parent="ParallaxBackground" unique_id=2043453758]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky" unique_id=460334336]
+
+[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground" unique_id=560156456]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1113691013]
