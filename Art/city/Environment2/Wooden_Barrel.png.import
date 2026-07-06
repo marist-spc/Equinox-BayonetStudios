@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsjlwse8bexln"
-path="res://.godot/imported/Wooden_Barrel.png-e807d5f5087e8578ac733f0fb95dd910.ctex"
+path="res://.godot/imported/Wooden_Barrel.png-54f56520094bbbc51c822e77e8c28f7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Wooden_Barrel.png"
-dest_files=["res://.godot/imported/Wooden_Barrel.png-e807d5f5087e8578ac733f0fb95dd910.ctex"]
+source_file="res://Art/city/Environment2/Wooden_Barrel.png"
+dest_files=["res://.godot/imported/Wooden_Barrel.png-54f56520094bbbc51c822e77e8c28f7a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dep1wqw2cjv2"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png-6e82db9a6ca44c02ba41422d7c4199aa.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png-b31375e67bd485d33b42263d0204ef27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png-6e82db9a6ca44c02ba41422d7c4199aa.ctex"]
+source_file="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Wooden Barrel.png-b31375e67bd485d33b42263d0204ef27.ctex"]
 
 [params]
 

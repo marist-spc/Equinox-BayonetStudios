@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boty0qjtx2mte"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Rock 07.png-2227b85d5508aba6338094759df20c5b.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Rock 07.png-a626ac8ed6f94ccecbf41bafe69c4d45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Rock 07.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Rock 07.png-2227b85d5508aba6338094759df20c5b.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Rock 07.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Rock 07.png-a626ac8ed6f94ccecbf41bafe69c4d45.ctex"]
 
 [params]
 

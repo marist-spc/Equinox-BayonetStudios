@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3gl466ukvajl"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Door 01.png-985cac095fc082aa9dfe629aa9d67fff.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Door 01.png-bce0b06774202bc535235f2d68a67d2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Door 01.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Door 01.png-985cac095fc082aa9dfe629aa9d67fff.ctex"]
+source_file="res://Art/city/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Door 01.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Door 01.png-bce0b06774202bc535235f2d68a67d2c.ctex"]
 
 [params]
 

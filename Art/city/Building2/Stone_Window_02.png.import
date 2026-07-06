@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fsayox8a7oer"
-path="res://.godot/imported/Stone_Window_02.png-a2efe9a15effc7055fad2e3551cbd99b.ctex"
+path="res://.godot/imported/Stone_Window_02.png-0046b8b1503779215dac473063bcc51b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Stone_Window_02.png"
-dest_files=["res://.godot/imported/Stone_Window_02.png-a2efe9a15effc7055fad2e3551cbd99b.ctex"]
+source_file="res://Art/city/Building2/Stone_Window_02.png"
+dest_files=["res://.godot/imported/Stone_Window_02.png-0046b8b1503779215dac473063bcc51b.ctex"]
 
 [params]
 

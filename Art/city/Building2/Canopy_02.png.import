@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btdabm8h2lel8"
-path="res://.godot/imported/Canopy_02.png-686863d6033fe23cbfeab279afe605d3.ctex"
+path="res://.godot/imported/Canopy_02.png-1199cd13e8b37f4050d4132752c6da9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Canopy_02.png"
-dest_files=["res://.godot/imported/Canopy_02.png-686863d6033fe23cbfeab279afe605d3.ctex"]
+source_file="res://Art/city/Building2/Canopy_02.png"
+dest_files=["res://.godot/imported/Canopy_02.png-1199cd13e8b37f4050d4132752c6da9b.ctex"]
 
 [params]
 

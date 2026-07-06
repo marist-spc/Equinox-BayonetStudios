@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsgy588vplt5c"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Barrel.png-a92cad8eb465e3851ea88f92d30e5b77.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Barrel.png-32a99948bec0a54587c60698cac846dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Barrel.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Barrel.png-a92cad8eb465e3851ea88f92d30e5b77.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Barrel.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Barrel.png-32a99948bec0a54587c60698cac846dc.ctex"]
 
 [params]
 

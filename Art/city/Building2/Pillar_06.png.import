@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2dsoavl7dpru"
-path="res://.godot/imported/Pillar_06.png-a2f1b9d035c6af34e8e412408a13472c.ctex"
+path="res://.godot/imported/Pillar_06.png-d1e98f6b80bd663c7b3c7f71528d675b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Pillar_06.png"
-dest_files=["res://.godot/imported/Pillar_06.png-a2f1b9d035c6af34e8e412408a13472c.ctex"]
+source_file="res://Art/city/Building2/Pillar_06.png"
+dest_files=["res://.godot/imported/Pillar_06.png-d1e98f6b80bd663c7b3c7f71528d675b.ctex"]
 
 [params]
 

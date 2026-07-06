@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmdd70dw215gw"
-path="res://.godot/imported/Trade_Tent_01.png-2b2c0b20ba06a64d88e0618d2589f309.ctex"
+path="res://.godot/imported/Trade_Tent_01.png-8b48820e96f3037e6bfd9828178ab28a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Trade_Tent_01.png"
-dest_files=["res://.godot/imported/Trade_Tent_01.png-2b2c0b20ba06a64d88e0618d2589f309.ctex"]
+source_file="res://Art/city/Environment2/Trade_Tent_01.png"
+dest_files=["res://.godot/imported/Trade_Tent_01.png-8b48820e96f3037e6bfd9828178ab28a.ctex"]
 
 [params]
 

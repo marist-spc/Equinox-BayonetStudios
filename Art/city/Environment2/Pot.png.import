@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpum748712ftq"
-path="res://.godot/imported/Pot.png-b8282daf302670de833982b3f04a9452.ctex"
+path="res://.godot/imported/Pot.png-e6431fe5fb0788059ff442816eca32b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Pot.png"
-dest_files=["res://.godot/imported/Pot.png-b8282daf302670de833982b3f04a9452.ctex"]
+source_file="res://Art/city/Environment2/Pot.png"
+dest_files=["res://.godot/imported/Pot.png-e6431fe5fb0788059ff442816eca32b2.ctex"]
 
 [params]
 

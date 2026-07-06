@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq4ekdud5lq16"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Roof B 04.png-648b7603dc0636f881873876ca5aa218.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Roof B 04.png-2ed31c9e98d1122e32c6b88008c5f309.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Roof B 04.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Roof B 04.png-648b7603dc0636f881873876ca5aa218.ctex"]
+source_file="res://Art/city/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Roof B 04.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Roof B 04.png-2ed31c9e98d1122e32c6b88008c5f309.ctex"]
 
 [params]
 

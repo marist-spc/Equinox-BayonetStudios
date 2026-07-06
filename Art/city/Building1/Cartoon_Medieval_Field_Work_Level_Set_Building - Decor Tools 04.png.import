@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv34a312gfgcn"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Decor Tools 04.png-dc7c871f86826bd7cc1ea71e39dc378b.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Decor Tools 04.png-ae562c41c474760430fa54e091dfc2f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Decor Tools 04.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Decor Tools 04.png-dc7c871f86826bd7cc1ea71e39dc378b.ctex"]
+source_file="res://Art/city/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Decor Tools 04.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Decor Tools 04.png-ae562c41c474760430fa54e091dfc2f9.ctex"]
 
 [params]
 

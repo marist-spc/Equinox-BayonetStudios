@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr05oqvt55m5s"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Sign 01.png-a5d4de10c2ceff469d00ade624ed9b32.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Sign 01.png-4a978ef23566a1dcddf5c05699f7af3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Sign 01.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Sign 01.png-a5d4de10c2ceff469d00ade624ed9b32.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Sign 01.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Sign 01.png-4a978ef23566a1dcddf5c05699f7af3c.ctex"]
 
 [params]
 

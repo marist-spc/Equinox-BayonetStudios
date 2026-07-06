@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcg0bhl231qph"
-path="res://.godot/imported/Decor_Cart.png-b7327b9b62ce3826b8fae2238d542070.ctex"
+path="res://.godot/imported/Decor_Cart.png-a593dbf3dbc31447271fd8ec45d68fd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Decor_Cart.png"
-dest_files=["res://.godot/imported/Decor_Cart.png-b7327b9b62ce3826b8fae2238d542070.ctex"]
+source_file="res://Art/city/Environment2/Decor_Cart.png"
+dest_files=["res://.godot/imported/Decor_Cart.png-a593dbf3dbc31447271fd8ec45d68fd4.ctex"]
 
 [params]
 

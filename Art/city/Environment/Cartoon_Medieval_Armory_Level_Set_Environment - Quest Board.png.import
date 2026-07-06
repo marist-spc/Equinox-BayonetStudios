@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bom3scdswrjyc"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png-5715c5c4f0493004b01e78698b6f2915.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png-8400d45b23da11f2db84317a3764dbb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png-5715c5c4f0493004b01e78698b6f2915.ctex"]
+source_file="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Quest Board.png-8400d45b23da11f2db84317a3764dbb9.ctex"]
 
 [params]
 

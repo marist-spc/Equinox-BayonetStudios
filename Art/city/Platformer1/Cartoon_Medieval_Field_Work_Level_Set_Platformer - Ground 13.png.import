@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqnhys8bfs6pp"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Platformer - Ground 13.png-afec3643df6c0a19c1caf2e02871a30b.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Platformer - Ground 13.png-5cba2d234e721b627f000685721f715d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Platformer1/Cartoon_Medieval_Field_Work_Level_Set_Platformer - Ground 13.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Platformer - Ground 13.png-afec3643df6c0a19c1caf2e02871a30b.ctex"]
+source_file="res://Art/city/Platformer1/Cartoon_Medieval_Field_Work_Level_Set_Platformer - Ground 13.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Platformer - Ground 13.png-5cba2d234e721b627f000685721f715d.ctex"]
 
 [params]
 

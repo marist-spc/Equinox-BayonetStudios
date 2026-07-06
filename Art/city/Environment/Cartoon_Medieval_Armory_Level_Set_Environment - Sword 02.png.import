@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8s051cf5hvyi"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 02.png-f3b03e8c3a6b408a4f65e34725cafef0.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 02.png-20edd73d78ecb82b2306abdc1ce6a667.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 02.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 02.png-f3b03e8c3a6b408a4f65e34725cafef0.ctex"]
+source_file="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 02.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Sword 02.png-20edd73d78ecb82b2306abdc1ce6a667.ctex"]
 
 [params]
 

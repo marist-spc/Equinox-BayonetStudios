@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8nmub1wu8hss"
-path="res://.godot/imported/origbig.png-8cbcfd84064bc8f213f74b2a1ba0af2e.ctex"
+path="res://.godot/imported/origbig.png-49261fa01d6a45ecbc24ca2369addc96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/nature_4/origbig.png"
-dest_files=["res://.godot/imported/origbig.png-8cbcfd84064bc8f213f74b2a1ba0af2e.ctex"]
+source_file="res://Art/city/nature_4/origbig.png"
+dest_files=["res://.godot/imported/origbig.png-49261fa01d6a45ecbc24ca2369addc96.ctex"]
 
 [params]
 

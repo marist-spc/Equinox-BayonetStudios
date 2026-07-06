@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0ufbig384lr3"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png-2ba71d531cff7c3d4a25bd3668899d7a.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png-7080ceef93158d3ee5e3f5a28805c141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png-2ba71d531cff7c3d4a25bd3668899d7a.ctex"]
+source_file="res://Art/city/Platformer/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Platformer - Ground 08.png-7080ceef93158d3ee5e3f5a28805c141.ctex"]
 
 [params]
 

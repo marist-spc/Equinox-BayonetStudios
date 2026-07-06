@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch376ctd7m3t6"
-path="res://.godot/imported/Ladder_02.png-69888cc3941836a90d690fe5ce416662.ctex"
+path="res://.godot/imported/Ladder_02.png-003b9d33fd23c8cb67cdfde78d1e331d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Ladder_02.png"
-dest_files=["res://.godot/imported/Ladder_02.png-69888cc3941836a90d690fe5ce416662.ctex"]
+source_file="res://Art/city/Building2/Ladder_02.png"
+dest_files=["res://.godot/imported/Ladder_02.png-003b9d33fd23c8cb67cdfde78d1e331d.ctex"]
 
 [params]
 

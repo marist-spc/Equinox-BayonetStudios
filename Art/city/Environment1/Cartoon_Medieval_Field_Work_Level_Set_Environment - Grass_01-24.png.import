@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3ysvn1hwpxet"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Grass_01-24.png-b1277cead6d90ab4ae26e7b9845322ee.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Grass_01-24.png-b8d7a093599224c39b4893db78cc89d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Grass_01-24.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Grass_01-24.png-b1277cead6d90ab4ae26e7b9845322ee.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Grass_01-24.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Grass_01-24.png-b8d7a093599224c39b4893db78cc89d0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjdahr3203nod"
-path="res://.godot/imported/Wide_Door_03.png-dce6b990e2afb1ba5d71779f8c046f2e.ctex"
+path="res://.godot/imported/Wide_Door_03.png-465c565dd6c8aef0e815871191c91b48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Wide_Door_03.png"
-dest_files=["res://.godot/imported/Wide_Door_03.png-dce6b990e2afb1ba5d71779f8c046f2e.ctex"]
+source_file="res://Art/city/Building2/Wide_Door_03.png"
+dest_files=["res://.godot/imported/Wide_Door_03.png-465c565dd6c8aef0e815871191c91b48.ctex"]
 
 [params]
 

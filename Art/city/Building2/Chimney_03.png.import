@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cckldbyag8as0"
-path="res://.godot/imported/Chimney_03.png-a49a37aa6a54b6018fde43d785b8938d.ctex"
+path="res://.godot/imported/Chimney_03.png-0f5db5f22523dc266abaaa78c8b5c40d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Chimney_03.png"
-dest_files=["res://.godot/imported/Chimney_03.png-a49a37aa6a54b6018fde43d785b8938d.ctex"]
+source_file="res://Art/city/Building2/Chimney_03.png"
+dest_files=["res://.godot/imported/Chimney_03.png-0f5db5f22523dc266abaaa78c8b5c40d.ctex"]
 
 [params]
 

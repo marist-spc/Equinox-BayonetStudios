@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4gwfy3hbios"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 02.png-cc7cdc3dfd6e48f94070d06287482300.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 02.png-884a2f9ae4331cecf3dff437e1eb0c29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 02.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 02.png-cc7cdc3dfd6e48f94070d06287482300.ctex"]
+source_file="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 02.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 02.png-884a2f9ae4331cecf3dff437e1eb0c29.ctex"]
 
 [params]
 

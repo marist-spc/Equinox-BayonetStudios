@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diunwnlkqvvrk"
-path="res://.godot/imported/3.png-3664b226ee702f951d17e9c426b185aa.ctex"
+path="res://.godot/imported/3.png-ee2df3ea681e3bb957aa61282100c967.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/nature_2/3.png"
-dest_files=["res://.godot/imported/3.png-3664b226ee702f951d17e9c426b185aa.ctex"]
+source_file="res://Art/city/nature_2/3.png"
+dest_files=["res://.godot/imported/3.png-ee2df3ea681e3bb957aa61282100c967.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daxis2cn8mkqo"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Chimney 01.png-ef124ec8d31da6f523bce350a1e0fae0.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Chimney 01.png-a7ff469fc1b1aa54621350c427dd1af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Chimney 01.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Chimney 01.png-ef124ec8d31da6f523bce350a1e0fae0.ctex"]
+source_file="res://Art/city/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Chimney 01.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Chimney 01.png-a7ff469fc1b1aa54621350c427dd1af6.ctex"]
 
 [params]
 

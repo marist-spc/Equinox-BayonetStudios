@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc514lv1kno46"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Canopy.png-1bdb4f2c09af569303c04d607c2637ea.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Canopy.png-f7ee7f1d37ee1a53b0080659bb8d92ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Canopy.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Canopy.png-1bdb4f2c09af569303c04d607c2637ea.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Canopy.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Canopy.png-f7ee7f1d37ee1a53b0080659bb8d92ce.ctex"]
 
 [params]
 

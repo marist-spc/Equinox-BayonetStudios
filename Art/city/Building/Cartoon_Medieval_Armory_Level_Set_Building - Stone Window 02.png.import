@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cinryiqvuqvnc"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Stone Window 02.png-fb56a22a4563098f14c27fccbc701808.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Stone Window 02.png-e9ff3e6907bf24faf6cdb37f738a6912.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building/Cartoon_Medieval_Armory_Level_Set_Building - Stone Window 02.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Stone Window 02.png-fb56a22a4563098f14c27fccbc701808.ctex"]
+source_file="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Stone Window 02.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Stone Window 02.png-e9ff3e6907bf24faf6cdb37f738a6912.ctex"]
 
 [params]
 

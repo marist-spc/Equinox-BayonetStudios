@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c542oho63mam8"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Funnel.png-2d4f4cce245eb4ab02bf0905e82914a6.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Funnel.png-4a48ab6e446bdb849ab485d442f308e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Funnel.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Funnel.png-2d4f4cce245eb4ab02bf0905e82914a6.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Funnel.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Funnel.png-4a48ab6e446bdb849ab485d442f308e0.ctex"]
 
 [params]
 

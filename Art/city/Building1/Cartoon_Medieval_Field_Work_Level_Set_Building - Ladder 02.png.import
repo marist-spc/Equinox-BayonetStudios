@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr0d344cq1by7"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Ladder 02.png-a030ec5008847f1a1e122bbc55cefa83.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Ladder 02.png-72d6c8104920df3aba2f1873eca206dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Ladder 02.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Ladder 02.png-a030ec5008847f1a1e122bbc55cefa83.ctex"]
+source_file="res://Art/city/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Ladder 02.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Ladder 02.png-72d6c8104920df3aba2f1873eca206dd.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcfgxjgmx4dye"
-path="res://.godot/imported/Ground_12.png-3849871813e9bb226d280446c4e9aa0d.ctex"
+path="res://.godot/imported/Ground_12.png-76250465473a6ecaa1fc0219e3aa7773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Platformer2/Ground_12.png"
-dest_files=["res://.godot/imported/Ground_12.png-3849871813e9bb226d280446c4e9aa0d.ctex"]
+source_file="res://Art/city/Platformer2/Ground_12.png"
+dest_files=["res://.godot/imported/Ground_12.png-76250465473a6ecaa1fc0219e3aa7773.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("run") and is_on_floor():
-		speed = 800.0
+		speed = 1000.0
 	elif not Input.is_action_pressed("run") or not is_on_floor():
 		speed = 500.0
 	
@@ -36,5 +36,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		
+	if global_position >= Vector2(5450, 1095) and global_position <= Vector2(5720, 1026):
+		pass
 
 	move_and_slide()

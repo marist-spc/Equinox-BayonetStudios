@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfx16ptmb0xmd"
-path="res://.godot/imported/Furnace.png-69847ebbdab4f31b29a7a1726c1e1f6c.ctex"
+path="res://.godot/imported/Furnace.png-53b5ebd5370f8967e382c419da3fbc46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Furnace.png"
-dest_files=["res://.godot/imported/Furnace.png-69847ebbdab4f31b29a7a1726c1e1f6c.ctex"]
+source_file="res://Art/city/Environment2/Furnace.png"
+dest_files=["res://.godot/imported/Furnace.png-53b5ebd5370f8967e382c419da3fbc46.ctex"]
 
 [params]
 

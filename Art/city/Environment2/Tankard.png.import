@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqrnu6logy6v7"
-path="res://.godot/imported/Tankard.png-5ebb6edae0a5d627cff3b18e90d6cce7.ctex"
+path="res://.godot/imported/Tankard.png-1254db43d2c9075b1c9a18045bc1f1d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Tankard.png"
-dest_files=["res://.godot/imported/Tankard.png-5ebb6edae0a5d627cff3b18e90d6cce7.ctex"]
+source_file="res://Art/city/Environment2/Tankard.png"
+dest_files=["res://.godot/imported/Tankard.png-1254db43d2c9075b1c9a18045bc1f1d0.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5hfdu5vc5d0q"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Plow.png-b2df77f25d8f362eb69d6432d7842935.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Plow.png-b1e28cc9f7a00741972bb51b3bc8134f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Plow.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Plow.png-b2df77f25d8f362eb69d6432d7842935.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Plow.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Plow.png-b1e28cc9f7a00741972bb51b3bc8134f.ctex"]
 
 [params]
 

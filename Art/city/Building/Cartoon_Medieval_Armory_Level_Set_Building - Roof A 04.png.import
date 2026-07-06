@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdvpfp5p7a16"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 04.png-7e107c733ec7b84b90ae2187a51ed3c0.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 04.png-d5fc090264574b5252a4bf29d188e818.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 04.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 04.png-7e107c733ec7b84b90ae2187a51ed3c0.ctex"]
+source_file="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 04.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Roof A 04.png-d5fc090264574b5252a4bf29d188e818.ctex"]
 
 [params]
 

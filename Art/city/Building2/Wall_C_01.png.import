@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk5dg5rpyo4hn"
-path="res://.godot/imported/Wall_C_01.png-61a7a26466124213ba4e656812fb857a.ctex"
+path="res://.godot/imported/Wall_C_01.png-7703a178f1e3b74e92f4cc2f7af54c16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building2/Wall_C_01.png"
-dest_files=["res://.godot/imported/Wall_C_01.png-61a7a26466124213ba4e656812fb857a.ctex"]
+source_file="res://Art/city/Building2/Wall_C_01.png"
+dest_files=["res://.godot/imported/Wall_C_01.png-7703a178f1e3b74e92f4cc2f7af54c16.ctex"]
 
 [params]
 

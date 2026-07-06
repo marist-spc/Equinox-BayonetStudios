@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w48a1ygxmwmp"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Handmill.png-42ddd73196c6e8654a44da4f786cd97f.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Handmill.png-baa0585b3ad847fe962990234984c69d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Handmill.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Handmill.png-42ddd73196c6e8654a44da4f786cd97f.ctex"]
+source_file="res://Art/city/Environment1/Cartoon_Medieval_Field_Work_Level_Set_Environment - Handmill.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Environment - Handmill.png-baa0585b3ad847fe962990234984c69d.ctex"]
 
 [params]
 

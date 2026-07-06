@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj56xpq7gcq01"
-path="res://.godot/imported/Street_Lantern.png-447fba11214292d44f8e4c6b9ce037cc.ctex"
+path="res://.godot/imported/Street_Lantern.png-0de3656ee0c6a319a5c06968a0e0d013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Street_Lantern.png"
-dest_files=["res://.godot/imported/Street_Lantern.png-447fba11214292d44f8e4c6b9ce037cc.ctex"]
+source_file="res://Art/city/Environment2/Street_Lantern.png"
+dest_files=["res://.godot/imported/Street_Lantern.png-0de3656ee0c6a319a5c06968a0e0d013.ctex"]
 
 [params]
 

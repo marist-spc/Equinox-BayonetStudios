@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1htl0rctx1rg"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Grass_03     .png-4ed755593bc9f78f8998a757c31be45c.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Grass_03     .png-00909307f4b0b9a423953991f4a8cdc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Grass_03     .png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Grass_03     .png-4ed755593bc9f78f8998a757c31be45c.ctex"]
+source_file="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Grass_03     .png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Grass_03     .png-00909307f4b0b9a423953991f4a8cdc8.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8nqmet0khk1n"
-path="res://.godot/imported/Tool_Board.png-d0194e96366b5ec8df12d53f87a1e30f.ctex"
+path="res://.godot/imported/Tool_Board.png-8c5532ae18804a6053f56ad4e6b21629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment2/Tool_Board.png"
-dest_files=["res://.godot/imported/Tool_Board.png-d0194e96366b5ec8df12d53f87a1e30f.ctex"]
+source_file="res://Art/city/Environment2/Tool_Board.png"
+dest_files=["res://.godot/imported/Tool_Board.png-8c5532ae18804a6053f56ad4e6b21629.ctex"]
 
 [params]
 

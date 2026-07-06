@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dipcpyk374ch8"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 08.png-ca49490d97f99d5585d960d7a2e43f35.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 08.png-5a5e1e77b683a5c685e5bed36d8471da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 08.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 08.png-ca49490d97f99d5585d960d7a2e43f35.ctex"]
+source_file="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 08.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Environment - Rock 08.png-5a5e1e77b683a5c685e5bed36d8471da.ctex"]
 
 [params]
 

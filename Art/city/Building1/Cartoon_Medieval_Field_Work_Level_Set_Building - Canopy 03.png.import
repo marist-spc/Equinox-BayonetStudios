@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjd4uw08ftbba"
-path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Canopy 03.png-2dee82d5811b8e401b11477bf76b64db.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Canopy 03.png-488ad501a1545f4ffbc1304d0120a7fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Canopy 03.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Canopy 03.png-2dee82d5811b8e401b11477bf76b64db.ctex"]
+source_file="res://Art/city/Building1/Cartoon_Medieval_Field_Work_Level_Set_Building - Canopy 03.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Field_Work_Level_Set_Building - Canopy 03.png-488ad501a1545f4ffbc1304d0120a7fa.ctex"]
 
 [params]
 

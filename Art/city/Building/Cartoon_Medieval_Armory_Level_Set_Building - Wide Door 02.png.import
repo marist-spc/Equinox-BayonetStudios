@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://665hqxhjt2ug"
-path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 02.png-000817fca8c264c76a68895f20c1a181.ctex"
+path="res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 02.png-0aef91942de0ca0bf356c42b49ff32e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BackgroundTerrain/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 02.png"
-dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 02.png-000817fca8c264c76a68895f20c1a181.ctex"]
+source_file="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 02.png"
+dest_files=["res://.godot/imported/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 02.png-0aef91942de0ca0bf356c42b49ff32e2.ctex"]
 
 [params]
 
