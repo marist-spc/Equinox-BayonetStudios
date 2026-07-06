@@ -10,8 +10,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
+	
+
+func showMessage(text):
+	$Message.text = text
+	$Message.show()
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_hj7fp"]

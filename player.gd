@@ -37,7 +37,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
-	if global_position >= Vector2(5450, 1095) and global_position <= Vector2(5720, 1026):
-		pass
 
 	move_and_slide()
