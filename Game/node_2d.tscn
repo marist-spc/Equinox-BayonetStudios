@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c0bp8axs3161i" path="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Bench.png" id="5_abqc5"]
 [ext_resource type="PackedScene" uid="uid://glvwn6grmp43" path="res://player.tscn" id="5_lqx5w"]
 [ext_resource type="Texture2D" uid="uid://ddf7h773s872t" path="res://Art/city/Castle Gate.png" id="7_abqc5"]
-[ext_resource type="PackedScene" uid="uid://da77uen8anjrq" path="res://Hud.tscn" id="9_abqc5"]
+[ext_resource type="PackedScene" uid="uid://da77uen8anjrq" path="res://door.tscn" id="9_abqc5"]
+[ext_resource type="PackedScene" uid="uid://or2dsrcpuosw" path="res://barrier.tscn" id="10_bmqwt"]
 
 [sub_resource type="GDScript" id="GDScript_rfi2n"]
 script/source = "extends Node2D
@@ -21,17 +22,30 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	var playerPos = $Player.global_position
+	print(playerPos)
 	
-	if Input.is_action_pressed(\"interact\") and playerPos >= Vector2(5400.0, 600.0) and playerPos <= Vector2(5750.0, 1200.0):
-		$HUD.showMessage(\"Press 'E' To Open Door\")
-		get_tree().change_scene_to_file(\"res://city.tscn\")
+	if playerPos >= Vector2(2360.0, 600.0) and playerPos <= Vector2(2380.0, 1200.0) or playerPos >= Vector2(5905.0, 600.0) and playerPos <= Vector2(5920.0, 1200.0):
+		$BarrierL.showBarrierMessage(\"Wouldn't you like to know weather boy...\")
+		$BarrierR.showBarrierMessage(\"Wouldn't you like to know weather boy...\")
+	else:
+		$BarrierL.showBarrierMessage(\"\")
+		$BarrierR.showBarrierMessage(\"\")
+		
+	
+	if playerPos >= Vector2(5400.0, 600.0) and playerPos <= Vector2(5750.0, 1200.0):
+		$Door.showDoorMessage(\"Press 'E' To Start Your Adventure\")
+		if Input.is_action_pressed(\"interact\"):
+			get_tree().change_scene_to_file(\"res://city.tscn\")
+	else:
+		$Door.showDoorMessage(\"\")
+		
 	
 "
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rfi2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
-size = Vector2(6971, 45)
+size = Vector2(7238, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wws2h"]
 size = Vector2(571, 77.99977)
@@ -45,12 +59,7 @@ size = Vector2(355.25, 476)
 [node name="Opening" type="Node2D" unique_id=1736169827]
 script = SubResource("GDScript_rfi2n")
 
-[node name="HUD" parent="." unique_id=1643127860 instance=ExtResource("9_abqc5")]
-offset = Vector2(5000, 600)
-transform = Transform2D(1, 0, 0, 1, 5000, 600)
-
 [node name="ParalaxBackground" type="Node2D" parent="." unique_id=1514123895]
-visible = false
 
 [node name="Sky" type="Parallax2D" parent="ParalaxBackground" unique_id=822156692]
 scroll_scale = Vector2(0, 0)
@@ -90,17 +99,17 @@ position = Vector2(4501.5, 425.5)
 texture = ExtResource("5_abqc5")
 
 [node name="FloorCollider" type="CollisionShape2D" parent="Floor" unique_id=2008815712]
-position = Vector2(1776, 583.5)
+position = Vector2(1909.5, 583.5)
 shape = SubResource("RectangleShape2D_rfi2n")
 
 [node name="RightCollider" type="CollisionShape2D" parent="Floor" unique_id=1976671279]
-position = Vector2(5224.5, 283)
+position = Vector2(5428.5, 277.5)
 rotation = 1.5707964
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_wws2h")
 
 [node name="LeftCollider" type="CollisionShape2D" parent="Floor" unique_id=681325113]
-position = Vector2(-1983.5, 348.5)
+position = Vector2(336.5, 345.5)
 shape = SubResource("RectangleShape2D_4qnfl")
 
 [node name="CityBuildingLayer" parent="." unique_id=1786326258 instance=ExtResource("5_6iolr")]
@@ -119,7 +128,19 @@ position = Vector2(5576, 956)
 shape = SubResource("RectangleShape2D_q1vw0")
 
 [node name="Player" parent="." unique_id=436499756 instance=ExtResource("5_lqx5w")]
-position = Vector2(1800, 968)
+position = Vector2(2888, 1003)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=54930784]
 offset = Vector2(0, -470)
+
+[node name="Door" parent="." unique_id=1643127860 instance=ExtResource("9_abqc5")]
+offset = Vector2(5000, 600)
+transform = Transform2D(1, 0, 0, 1, 5000, 600)
+
+[node name="BarrierL" parent="." unique_id=495006658 instance=ExtResource("10_bmqwt")]
+offset = Vector2(1500, 600)
+transform = Transform2D(1, 0, 0, 1, 1500, 600)
+
+[node name="BarrierR" parent="." unique_id=2071093951 instance=ExtResource("10_bmqwt")]
+offset = Vector2(5910, 600)
+transform = Transform2D(1, 0, 0, 1, 5910, 600)

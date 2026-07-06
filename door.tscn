@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://da77uen8anjrq"]
+
+[sub_resource type="GDScript" id="GDScript_rfi2n"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+	
+
+func showDoorMessage(text):
+	$DoorMessage.text = text
+	$DoorMessage.show()
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj7fp"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[node name="Door" type="CanvasLayer" unique_id=1643127860]
+follow_viewport_enabled = true
+script = SubResource("GDScript_rfi2n")
+
+[node name="DoorMessage" type="Label" parent="." unique_id=1480770355]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_hj7fp")
+metadata/_edit_use_anchors_ = true

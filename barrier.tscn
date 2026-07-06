@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://da77uen8anjrq"]
+[gd_scene format=3 uid="uid://or2dsrcpuosw"]
 
-[sub_resource type="GDScript" id="GDScript_rfi2n"]
+[sub_resource type="GDScript" id="GDScript_abqc5"]
 script/source = "extends CanvasLayer
 
 
@@ -12,26 +12,23 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	
 
-func showMessage(text):
-	$Message.text = text
-	$Message.show()
+func showBarrierMessage(text):
+	$BarrierMessage.text = text
+	$BarrierMessage.show()
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_hj7fp"]
 font_size = 64
 font_color = Color(0, 0, 0, 1)
 
-[node name="HUD" type="CanvasLayer" unique_id=1643127860]
-script = SubResource("GDScript_rfi2n")
+[node name="Barrier" type="CanvasLayer" unique_id=495006658]
+follow_viewport_enabled = true
+script = SubResource("GDScript_abqc5")
 
-[node name="Message" type="Label" parent="." unique_id=1480770355]
+[node name="BarrierMessage" type="Label" parent="." unique_id=1812947515]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Press 'E' To Open Door"
+text = "
+"
 label_settings = SubResource("LabelSettings_hj7fp")
-
-[node name="Health" type="Label" parent="." unique_id=92797675]
-offset_right = 40.0
-offset_bottom = 23.0
