@@ -59,6 +59,7 @@ scale = Vector2(1.724138, 1.7239999)
 texture = ExtResource("1_hpa3k")
 
 [node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground" unique_id=560156456]
+scroll_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1113691013]
 
