@@ -6,6 +6,39 @@
 [ext_resource type="Texture2D" uid="uid://dc1krcdoyliq1" path="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wall C 02.png" id="4_ky23g"]
 [ext_resource type="Texture2D" uid="uid://yj5fhqlsgddc" path="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Decor Window 04.png" id="5_ciawh"]
 [ext_resource type="Texture2D" uid="uid://cyb3psgfj7fv5" path="res://Art/city/Building/Cartoon_Medieval_Armory_Level_Set_Building - Wide Door 01.png" id="6_2ygpt"]
+[ext_resource type="Texture2D" uid="uid://cofo88fhgpjir" path="res://Art/city/Environment2/Decor_Shield.png" id="6_y2bgq"]
+[ext_resource type="Texture2D" uid="uid://cfph648yd36xm" path="res://Art/city/Environment2/Wooden_Crate.png" id="8_26gaw"]
+[ext_resource type="Texture2D" uid="uid://bu2xumhu1ai8" path="res://Art/NPC/Civilian #1.png" id="9_uh1d3"]
+[ext_resource type="PackedScene" uid="uid://da77uen8anjrq" path="res://Hud.tscn" id="10_26gaw"]
+
+[sub_resource type="GDScript" id="GDScript_y2bgq"]
+script/source = "extends Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	var playerPos = $Player.global_position
+	print(playerPos)
+	
+	if playerPos >= Vector2(2300.0, 600.0) and playerPos <= Vector2(2600.0, 1200.0):
+		$ColliderL.showMessage(\"The king took my arm...\")
+	else:
+		$ColliderL.showMessage(\"\")
+		
+	
+	#if playerPos >= Vector2(5400.0, 600.0) and playerPos <= Vector2(5750.0, 1200.0):
+		#$Door.showMessage(\"Press 'E' To Start Your Adventure\")
+		#if Input.is_action_pressed(\"interact\"):
+			#get_tree().change_scene_to_file(\"res://city.tscn\")
+	#else:
+		#$Door.showMessage(\"\")
+		
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
 size = Vector2(7641, 159)
@@ -14,10 +47,12 @@ size = Vector2(7641, 159)
 size = Vector2(90, 478)
 
 [node name="City" type="Node2D" unique_id=1090205509]
+script = SubResource("GDScript_y2bgq")
 
 [node name="ParallaxBackground" type="Node2D" parent="." unique_id=1403351972]
 
 [node name="Sky" type="Parallax2D" parent="ParallaxBackground" unique_id=2043453758]
+scroll_offset = Vector2(-839, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky" unique_id=460334336]
 position = Vector2(1153, 650.5)
@@ -25,6 +60,7 @@ scale = Vector2(1.724138, 1.7239999)
 texture = ExtResource("1_hpa3k")
 
 [node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground" unique_id=560156456]
+scroll_offset = Vector2(-839, -374)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1113691013]
 
@@ -73,8 +109,37 @@ texture = ExtResource("4_ky23g")
 position = Vector2(1031, -275)
 texture = ExtResource("4_ky23g")
 
+[node name="DecorShield" type="Sprite2D" parent="Buildings" unique_id=1869730522]
+position = Vector2(762, -225)
+texture = ExtResource("6_y2bgq")
+
+[node name="WoodenCrate" type="Sprite2D" parent="Buildings" unique_id=1969252952]
+position = Vector2(1252, 76)
+texture = ExtResource("8_26gaw")
+
+[node name="WoodenCrate2" type="Sprite2D" parent="Buildings" unique_id=1774570372]
+position = Vector2(1259, -42)
+texture = ExtResource("8_26gaw")
+
+[node name="WoodenCrate3" type="Sprite2D" parent="Buildings" unique_id=674618786]
+position = Vector2(1370, 76)
+texture = ExtResource("8_26gaw")
+
+[node name="Civilian#1" type="Sprite2D" parent="Buildings" unique_id=204473180]
+position = Vector2(958, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_uh1d3")
+
 [node name="Player" parent="." unique_id=436499756 instance=ExtResource("3_o3tkm")]
-position = Vector2(858, 940)
+position = Vector2(1013, 1048)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=877218978]
 offset = Vector2(0, -470)
+
+[node name="ColliderL" parent="." unique_id=1643127860 instance=ExtResource("10_26gaw")]
+offset = Vector2(2250, 350)
+transform = Transform2D(1, 0, 0, 1, 2250, 350)
+
+[node name="ColliderR" parent="." unique_id=284603126 instance=ExtResource("10_26gaw")]
+offset = Vector2(5750, 600)
+transform = Transform2D(1, 0, 0, 1, 5750, 600)

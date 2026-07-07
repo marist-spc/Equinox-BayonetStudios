@@ -14,20 +14,20 @@ func _process(_delta: float) -> void:
 	pass
 	
 
-func showDoorMessage(text):
-	$DoorMessage.text = text
-	$DoorMessage.show()
+func showMessage(text):
+	$Message.text = text
+	$Message.show()
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_hj7fp"]
 font_size = 64
 font_color = Color(0, 0, 0, 1)
 
-[node name="Door" type="CanvasLayer" unique_id=1643127860]
+[node name="Hud" type="CanvasLayer" unique_id=1643127860]
 follow_viewport_enabled = true
 script = SubResource("GDScript_rfi2n")
 
-[node name="DoorMessage" type="Label" parent="." unique_id=1480770355]
+[node name="Message" type="Label" parent="." unique_id=1480770355]
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_hj7fp")

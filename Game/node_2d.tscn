@@ -8,8 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0bp8axs3161i" path="res://Art/city/Environment/Cartoon_Medieval_Armory_Level_Set_Environment - Bench.png" id="5_abqc5"]
 [ext_resource type="PackedScene" uid="uid://glvwn6grmp43" path="res://player.tscn" id="5_lqx5w"]
 [ext_resource type="Texture2D" uid="uid://ddf7h773s872t" path="res://Art/city/Castle Gate.png" id="7_abqc5"]
-[ext_resource type="PackedScene" uid="uid://da77uen8anjrq" path="res://door.tscn" id="9_abqc5"]
-[ext_resource type="PackedScene" uid="uid://or2dsrcpuosw" path="res://barrier.tscn" id="10_bmqwt"]
+[ext_resource type="PackedScene" uid="uid://da77uen8anjrq" path="res://Hud.tscn" id="9_abqc5"]
 
 [sub_resource type="GDScript" id="GDScript_rfi2n"]
 script/source = "extends Node2D
@@ -22,22 +21,22 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	var playerPos = $Player.global_position
-	print(playerPos)
+	#print(playerPos)
 	
 	if playerPos >= Vector2(2360.0, 600.0) and playerPos <= Vector2(2380.0, 1200.0) or playerPos >= Vector2(5905.0, 600.0) and playerPos <= Vector2(5920.0, 1200.0):
-		$BarrierL.showBarrierMessage(\"Wouldn't you like to know weather boy...\")
-		$BarrierR.showBarrierMessage(\"Wouldn't you like to know weather boy...\")
+		$ColliderL.showMessage(\"Wouldn't you like to know weather boy...\")
+		$ColliderR.showMessage(\"Wouldn't you like to know weather boy...\")
 	else:
-		$BarrierL.showBarrierMessage(\"\")
-		$BarrierR.showBarrierMessage(\"\")
+		$ColliderL.showMessage(\"\")
+		$ColliderR.showMessage(\"\")
 		
 	
 	if playerPos >= Vector2(5400.0, 600.0) and playerPos <= Vector2(5750.0, 1200.0):
-		$Door.showDoorMessage(\"Press 'E' To Start Your Adventure\")
+		$Door.showMessage(\"Press 'E' To Start Your Adventure\")
 		if Input.is_action_pressed(\"interact\"):
 			get_tree().change_scene_to_file(\"res://city.tscn\")
 	else:
-		$Door.showDoorMessage(\"\")
+		$Door.showMessage(\"\")
 		
 	
 "
@@ -128,7 +127,7 @@ position = Vector2(5576, 956)
 shape = SubResource("RectangleShape2D_q1vw0")
 
 [node name="Player" parent="." unique_id=436499756 instance=ExtResource("5_lqx5w")]
-position = Vector2(2888, 1003)
+position = Vector2(2819, 1084)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=54930784]
 offset = Vector2(0, -470)
@@ -137,10 +136,10 @@ offset = Vector2(0, -470)
 offset = Vector2(5000, 600)
 transform = Transform2D(1, 0, 0, 1, 5000, 600)
 
-[node name="BarrierL" parent="." unique_id=495006658 instance=ExtResource("10_bmqwt")]
+[node name="ColliderL" parent="." unique_id=1454768842 instance=ExtResource("9_abqc5")]
 offset = Vector2(1500, 600)
 transform = Transform2D(1, 0, 0, 1, 1500, 600)
 
-[node name="BarrierR" parent="." unique_id=2071093951 instance=ExtResource("10_bmqwt")]
-offset = Vector2(5910, 600)
-transform = Transform2D(1, 0, 0, 1, 5910, 600)
+[node name="ColliderR" parent="." unique_id=1410058919 instance=ExtResource("9_abqc5")]
+offset = Vector2(5750, 600)
+transform = Transform2D(1, 0, 0, 1, 5750, 600)

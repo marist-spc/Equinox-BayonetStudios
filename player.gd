@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("run") and is_on_floor():
-		speed = 1000.0
+		speed = 1200.0
 	elif not Input.is_action_pressed("run") or not is_on_floor():
 		speed = 500.0
 	
@@ -24,10 +24,10 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("left"):
 		$AnimatedSprite2D.flip_h = true
-		#$AnimatedSprite2D.play("Walk")
+		$AnimatedSprite2D.play("Run")
 	elif Input.is_action_pressed("right"):
 		$AnimatedSprite2D.flip_h = false
-		#$AnimatedSprite2D.play("Walk")
+		$AnimatedSprite2D.play("Run")
 	else:
 		$AnimatedSprite2D.play("Idle")
 	
