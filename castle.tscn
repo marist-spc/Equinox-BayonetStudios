@@ -21,26 +21,26 @@ func _process(_delta: float) -> void:
 	var _playerPos = $Player.global_position
 	
 
-func crossLaser(delta: float):
+func crossLaser(_delta: float):
 	var randX = randf_range(-9, 3800)
 	var _attackNum = 3
-	var speed = 1500
-	print
 	
 	if randX:
 		$Warning.position = Vector2(randX, 687)
 		$Warning.show()
 		$Warning.play(\"Warn\")
-		await get_tree().create_timer(1).timeout 
+		
+		await get_tree().create_timer(.5).timeout 
+		
 		$Warning.stop()
 		$Warning.hide()
 		
-		$LightCross.position = Vector2(randX, 0)
+		$LightCross.position = Vector2(randX, -1000)
 		$LightCross.show()
-		$LightCross.position += Vector2.DOWN * speed * delta
-		await get_tree().create_timer(2).timeout 
-		$LightCross.position += Vector2.ZERO
-		$LightCross.hide()
+		
+		var tween = get_tree().create_tween()
+		tween.tween_property($LightCross, \"position\", Vector2(randX, 1500), 0.70)
+		tween.tween_callback($LightCross.hide.bind())
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
@@ -84,7 +84,7 @@ shape = SubResource("RectangleShape2D_rfi2n")
 position = Vector2(1284, 520)
 
 [node name="Player" parent="." unique_id=962178757 instance=ExtResource("2_1gkcl")]
-position = Vector2(1312, 813)
+position = Vector2(2018, 855)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1324404032]
 scale = Vector2(2, 2)
@@ -100,5 +100,5 @@ frame = 1
 frame_progress = 0.071658745
 
 [node name="LightCross" type="Sprite2D" parent="." unique_id=1496533340]
-position = Vector2(-834, 448)
+position = Vector2(1556, -2216)
 texture = ExtResource("5_2drs5")
