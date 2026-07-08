@@ -24,19 +24,19 @@ func _process(_delta: float) -> void:
 	#print(playerPos)
 	
 	if playerPos >= Vector2(2360.0, 600.0) and playerPos <= Vector2(2380.0, 1200.0) or playerPos >= Vector2(5905.0, 600.0) and playerPos <= Vector2(5920.0, 1200.0):
-		$ColliderL.showMessage(\"Wouldn't you like to know weather boy...\")
-		$ColliderR.showMessage(\"Wouldn't you like to know weather boy...\")
+		$ColliderL.showMessage(\"Wouldn't you like to know weather boy...\", \"#ffffff\")
+		$ColliderR.showMessage(\"Wouldn't you like to know weather boy...\", \"#ffffff\")
 	else:
-		$ColliderL.showMessage(\"\")
-		$ColliderR.showMessage(\"\")
+		$ColliderL.showMessage(\"\", \"#ffffff\")
+		$ColliderR.showMessage(\"\", \"#ffffff\")
 		
 	
 	if playerPos >= Vector2(5400.0, 600.0) and playerPos <= Vector2(5750.0, 1200.0):
-		$Door.showMessage(\"Press 'E' To Start Your Adventure\")
+		$Door.showMessage(\"Press 'E' To Start Your Adventure\", \"#FCFC51\")
 		if Input.is_action_pressed(\"interact\"):
 			get_tree().change_scene_to_file(\"res://city.tscn\")
 	else:
-		$Door.showMessage(\"\")
+		$Door.showMessage(\"\", \"#ffffff\")
 		
 	
 "

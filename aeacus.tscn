@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://dhqpo1vrmcyfu"]
+
+[ext_resource type="Texture2D" uid="uid://bxex6he7fj8iq" path="res://Art/Boss/Aeacus.png" id="2_fwvf0"]
+[ext_resource type="Texture2D" uid="uid://df8qkfsnj7t5p" path="res://Art/Boss/AeacusSitting.png" id="3_ei8s7"]
+[ext_resource type="Texture2D" uid="uid://cqtlugjyui15p" path="res://Art/Boss/AeacusSnap.png" id="4_tms22"]
+
+[sub_resource type="GDScript" id="GDScript_0h3u8"]
+script/source = "extends CharacterBody2D
+
+var attacks = [\"CrossLaser\"]
+#, \"TargetLock\"
+var attacking
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	attacking = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	var newAttack
+	var _playerPos = $\"../Player\".global_position
+	var parent = get_parent()
+	
+	if attacking == true:
+		newAttack = attacks.pick_random()
+		attacking = false
+		if newAttack == \"CrossLaser\":
+			parent.crossLaser(2)
+			
+			
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tdwq"]
+atlas = ExtResource("4_tms22")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4njn"]
+atlas = ExtResource("4_tms22")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8b3d"]
+atlas = ExtResource("4_tms22")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11eyd"]
+atlas = ExtResource("4_tms22")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ebd0"]
+atlas = ExtResource("4_tms22")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spdgt"]
+atlas = ExtResource("4_tms22")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ix3f"]
+atlas = ExtResource("4_tms22")
+region = Rect2(0, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utfma"]
+atlas = ExtResource("4_tms22")
+region = Rect2(1000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88b0v"]
+atlas = ExtResource("4_tms22")
+region = Rect2(2000, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iunmr"]
+atlas = ExtResource("4_tms22")
+region = Rect2(0, 3000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfi2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fwvf0")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ei8s7")
+}],
+"loop": 1,
+"name": &"Sitting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tdwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4njn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8b3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11eyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ebd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spdgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ix3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utfma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88b0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iunmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spdgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11eyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8b3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4njn")
+}],
+"loop": 0,
+"name": &"Snap",
+"speed": 10.0
+}]
+
+[node name="Aeacus" type="CharacterBody2D" unique_id=436499756]
+collision_mask = 2
+script = SubResource("GDScript_0h3u8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1193495193]
+scale = Vector2(6, 6)
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2042682069]
+scale = Vector2(13, 13)
+build_mode = 1
+polygon = PackedVector2Array(0, -6.5, -1, -6, -1.5, -5.5, -1.5, -5, -2, -4.5, -2.5, -4, -3, -3.5, -3, -2.5, -3, -2, -3.5, -1, -3.5, -0.5, -4, 0, -4.5, 0.5, -5, 0.5, -5, 1, -5, 1.5, -4.5, 1.5, -4.5, 2, -4.5, 2.5, -4.5, 3.5, -4, 3.5, -3.5, 3.5, -2.5, 3.5, -2, 3, -2.5, 3.5, -2.5, 4, -2.5, 4.5, -3, 5, -3, 5.5, -3.5, 6.5, -3.5, 7, -3, 7, -2, 7, -1.5, 7, -2, 7, -1.5, 7, -1, 7, -0.5, 7, 0, 7, 1, 7, 1.5, 7, 2, 7, 0.5, 7, 2, 7, 1.5, 7, 2.5, 7, 3, 7, 4, 7, 4, 6.5, 3.5, 6, 3.5, 5, 3.5, 4, 3.5, 2.5, 3, 2, 2.5, 1.5, 3, 1.5, 4, 1, 4.5, 0.5, 5, 0, 4.5, -0.5, 4, -1, 3.5, -2, 3, -3, 2.5, -3.5, 2, -4, 1.5, -4.5, 2, -5, 2.5, -5.5, 2, -5.5, 1.5, -6, 1.5, -6.5, 0.5, -6.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=770037083]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_rfi2n")
+animation = &"Snap"
+frame = 13
+frame_progress = 1.0

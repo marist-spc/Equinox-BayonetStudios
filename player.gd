@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -600.0
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("run"):
-		speed = 1000.0
+		speed = 700.0
 	elif not Input.is_action_pressed("run"):
 		speed = 500.0
 	

@@ -1,13 +1,104 @@
 [gd_scene format=3 uid="uid://n1h855te0v0y"]
 
+[ext_resource type="PackedScene" uid="uid://676poh7fg4fg" path="res://tile_map_layer.tscn" id="1_vm22h"]
+[ext_resource type="PackedScene" uid="uid://glvwn6grmp43" path="res://player.tscn" id="2_1gkcl"]
+[ext_resource type="PackedScene" uid="uid://dhqpo1vrmcyfu" path="res://aeacus.tscn" id="2_t33uu"]
+[ext_resource type="Texture2D" uid="uid://bx0s8eu8if3wp" path="res://Art/Boss/Warning.png" id="4_231t4"]
+[ext_resource type="Texture2D" uid="uid://dpo0glsat6kuc" path="res://Art/Boss/LightCrossAttack.png" id="5_2drs5"]
+
+[sub_resource type="GDScript" id="GDScript_rfi2n"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Warning.hide()
+	$LightCross.hide()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	var _playerPos = $Player.global_position
+	
+
+func crossLaser(delta: float):
+	var randX = randf_range(-9, 3800)
+	var _attackNum = 3
+	var speed = 1500
+	print
+	
+	if randX:
+		$Warning.position = Vector2(randX, 687)
+		$Warning.show()
+		$Warning.play(\"Warn\")
+		await get_tree().create_timer(1).timeout 
+		$Warning.stop()
+		$Warning.hide()
+		
+		$LightCross.position = Vector2(randX, 0)
+		$LightCross.show()
+		$LightCross.position += Vector2.DOWN * speed * delta
+		await get_tree().create_timer(2).timeout 
+		$LightCross.position += Vector2.ZERO
+		$LightCross.hide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+size = Vector2(3844, 126.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lyqe"]
+atlas = ExtResource("4_231t4")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ij18"]
+atlas = ExtResource("4_231t4")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfi2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lyqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ij18")
+}],
+"loop": 1,
+"name": &"Warn",
+"speed": 10.0
+}]
+
 [node name="Castle" type="Node2D" unique_id=1090205509]
+script = SubResource("GDScript_rfi2n")
 
-[node name="ParallaxBackground" type="Node2D" parent="." unique_id=1403351972]
+[node name="CityBuildingLayer" parent="." unique_id=1786326258 instance=ExtResource("1_vm22h")]
 
-[node name="Sky" type="Parallax2D" parent="ParallaxBackground" unique_id=2043453758]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=488940167]
+collision_layer = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky" unique_id=460334336]
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1574380412]
+position = Vector2(1919, 1025.25)
+shape = SubResource("RectangleShape2D_rfi2n")
 
-[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground" unique_id=560156456]
+[node name="Aeacus" parent="." unique_id=436499756 instance=ExtResource("2_t33uu")]
+position = Vector2(1284, 520)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1113691013]
+[node name="Player" parent="." unique_id=962178757 instance=ExtResource("2_1gkcl")]
+position = Vector2(1312, 813)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1324404032]
+scale = Vector2(2, 2)
+offset = Vector2(0, -470)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Warning" type="AnimatedSprite2D" parent="." unique_id=1848868919]
+position = Vector2(-933.9999, 1254)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_rfi2n")
+animation = &"Warn"
+frame = 1
+frame_progress = 0.071658745
+
+[node name="LightCross" type="Sprite2D" parent="." unique_id=1496533340]
+position = Vector2(-834, 448)
+texture = ExtResource("5_2drs5")
