@@ -39,8 +39,8 @@ func crossLaser(_delta: float):
 		$LightCross.show()
 		
 		var tween = get_tree().create_tween()
-		tween.tween_property($LightCross, \"position\", Vector2(randX, 1500), 0.70)
-		tween.tween_callback($LightCross.hide.bind())
+		tween.tween_property($LightCross, \"position\", Vector2(randX, 1500), 0.60)
+		tween.tween_callback($LightCross.hide)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]

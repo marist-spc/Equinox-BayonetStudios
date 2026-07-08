@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
 
-var speed = 500.0
+var speed = 700.0
 const JUMP_VELOCITY = -600.0
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("run"):
-		speed = 700.0
-	elif not Input.is_action_pressed("run"):
-		speed = 500.0
+	var tween = get_tree().create_tween()
+	
+	if Input.is_action_just_pressed("run"):
+		tween.tween_property($Player, "position", position.x + 200, 1)
 	
 	# Add the gravity.
 	if not is_on_floor():
