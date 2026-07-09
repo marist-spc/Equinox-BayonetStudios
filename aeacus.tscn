@@ -7,28 +7,50 @@
 [sub_resource type="GDScript" id="GDScript_0h3u8"]
 script/source = "extends CharacterBody2D
 
-var attacks = [ \"TargetLock\"]
-#\"CrossLaser\",
+var attacks = [\"CrossLaser\"]
 var attacking
+var pillarHealth = 4
+var player
+#, \"TargetLock\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var textBox = $\"../AeacusText\"
+	
+	$AnimatedSprite2D.play(\"Idle\")
+	textBox.showMessage(\"You dare Enter my castle?\", \"#cd4932\")
+	await get_tree().create_timer(4).timeout
+	textBox.showMessage(\"Heh, at least this'll amuse me\", \"#cd4932\")
+	await get_tree().create_timer(2).timeout
+	$AnimatedSprite2D.play(\"Sitting\")
+	await get_tree().create_timer(2).timeout
+	textBox.showMessage(\"\", \"#ffffff\")
 	attacking = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	player = $\"../Player\"
 	var newAttack
-	var _playerPos = $\"../Player\".global_position
+	var playerPos = player.global_position
 	var parent = get_parent()
-	
-	if attacking == true:
-		newAttack = attacks.pick_random()
-		attacking = false
-		$AnimatedSprite2D.play(\"Snap\")
-		if newAttack == \"CrossLaser\":
-			parent.crossLaser()
-		elif newAttack == \"TargetLock\":
-			parent.targetLock()
+	if playerPos:
+		$\"../PlayerSpeak\".showMessage(\"\", \"#ffffff\")
+		await get_tree().create_timer(10).timeout
+		$\"../PlayerSpeak\".offset.x = playerPos.x - (playerPos.x/2)
+		$\"../PlayerSpeak\".showMessage(\"I must destroy the 4 pillars\", \"#ffffff\")
+		await get_tree().create_timer(5).timeout
+		$\"../PlayerSpeak\".showMessage(\"\", \"#ffffff\")
+	if pillarHealth >= 0:
+		if attacking == true:
+			newAttack = attacks.pick_random()
+			$AnimatedSprite2D.play(\"Snap\")
+			attacking = false
+			if newAttack == \"CrossLaser\":
+				parent.crossLaser()
+			elif newAttack == \"TargetLock\":
+				parent.targetLock()
+			await get_tree().create_timer(4).timeout
+			attacking = true
 			
 			
 "

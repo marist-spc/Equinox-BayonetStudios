@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dhlrovddgslf4"]
+
+[ext_resource type="Texture2D" uid="uid://dpo0glsat6kuc" path="res://Art/Boss/LightCrossAttack.png" id="1_t0dib"]
+
+[sub_resource type="GDScript" id="GDScript_t0dib"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass	
+
+func start_attack(target_x: float):
+	self.position = Vector2(target_x, -1000)
+	self.show()
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, \"position\", Vector2(target_x, 3000), 0.60)
+	
+	await tween.finished
+	queue_free() 
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+size = Vector2(587, 813)
+
+[node name="CrossLight" type="Node2D" unique_id=386342234]
+script = SubResource("GDScript_t0dib")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=279565605]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=853349936]
+position = Vector2(1549, -2101)
+shape = SubResource("RectangleShape2D_rfi2n")
+
+[node name="Beam" type="Sprite2D" parent="CharacterBody2D" unique_id=1004609652]
+position = Vector2(1591.5, -2168.5)
+scale = Vector2(1.1830001, 1.151)
+texture = ExtResource("1_t0dib")

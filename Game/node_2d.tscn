@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 		
 	
 	if playerPos >= Vector2(5400.0, 600.0) and playerPos <= Vector2(5750.0, 1200.0):
-		$Door.showMessage(\"Press 'E' To Start Your Adventure\", \"#FCFC51\")
+		$Door.showMessage(\"Press 'C' To Start Your Adventure\", \"#FCFC51\")
 		if Input.is_action_pressed(\"interact\"):
 			get_tree().change_scene_to_file(\"res://city.tscn\")
 	else:

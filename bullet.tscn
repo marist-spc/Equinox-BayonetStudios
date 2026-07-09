@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dtwav73qfivkt"]
+
+[ext_resource type="Texture2D" uid="uid://bux7yjx3j4mm1" path="res://Art/Player/Bullet.png" id="1_v7oki"]
+
+[sub_resource type="GDScript" id="GDScript_v7oki"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
+size = Vector2(24, 7)
+
+[node name="Bullet" type="Area2D" unique_id=820756205]
+script = SubResource("GDScript_v7oki")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=572266696]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736114769]
+position = Vector2(-8, -10.5)
+shape = SubResource("RectangleShape2D_v8qja")

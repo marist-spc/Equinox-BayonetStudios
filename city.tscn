@@ -36,7 +36,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var playerPos = $Player.global_position
 	var npcs = get_tree().get_nodes_in_group(\"NPCs\")
-	print(playerPos)
+	#print(playerPos)
 	
 	if playerPos >= Vector2(2200.0, 600.0) and playerPos <= Vector2(2600.0, 1200.0):
 		$Civ1.showMessage(\"The king took my arm!\", \"#ffffff\")
@@ -64,7 +64,7 @@ func _process(_delta: float) -> void:
 		
 	
 	if playerPos >= Vector2(12424.0, 400.0) and playerPos <= Vector2(12717.0, 700.0):
-		$Door.showMessage(\"Press 'E' To Enter\", \"#3c5dc3\")
+		$Door.showMessage(\"Press 'C' To Enter\", \"#3c5dc3\")
 		if Input.is_action_pressed(\"interact\"):
 			get_tree().change_scene_to_file(\"res://castle.tscn\")
 	else:
