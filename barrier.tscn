@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://or2dsrcpuosw"]
+
+[sub_resource type="GDScript" id="GDScript_abqc5"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+
+func showBarrierMessage(text):
+	$BarrierMessage.text = text
+	$BarrierMessage.show()
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj7fp"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[node name="Barrier" type="CanvasLayer" unique_id=495006658]
+follow_viewport_enabled = true
+script = SubResource("GDScript_abqc5")
+
+[node name="BarrierMessage" type="Label" parent="." unique_id=1812947515]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "
+"
+label_settings = SubResource("LabelSettings_hj7fp")

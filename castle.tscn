@@ -1,13 +1,232 @@
 [gd_scene format=3 uid="uid://n1h855te0v0y"]
 
+[ext_resource type="PackedScene" uid="uid://676poh7fg4fg" path="res://tile_map_layer.tscn" id="1_vm22h"]
+[ext_resource type="PackedScene" uid="uid://glvwn6grmp43" path="res://player.tscn" id="2_1gkcl"]
+[ext_resource type="Texture2D" uid="uid://dyhdlje7us44r" path="res://Art/Boss/Throne room.png" id="2_7lyqe"]
+[ext_resource type="PackedScene" uid="uid://dhqpo1vrmcyfu" path="res://aeacus.tscn" id="2_t33uu"]
+[ext_resource type="Texture2D" uid="uid://bor4reuy4ubo6" path="res://Art/Boss/Pillar.png" id="3_2ij18"]
+[ext_resource type="Texture2D" uid="uid://bp1m2g6p6j5g2" path="res://Art/Boss/Black.png" id="4_2ij18"]
+[ext_resource type="Texture2D" uid="uid://bx0s8eu8if3wp" path="res://Art/Boss/Warning.png" id="4_231t4"]
+[ext_resource type="Texture2D" uid="uid://dpo0glsat6kuc" path="res://Art/Boss/LightCrossAttack.png" id="5_2drs5"]
+[ext_resource type="Texture2D" uid="uid://4g21dehfox2v" path="res://Art/Boss/Pillar hurt.png" id="5_ml41p"]
+
+[sub_resource type="GDScript" id="GDScript_rfi2n"]
+script/source = "extends Node2D
+
+var attackPos
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Warning.hide()
+	$LightCross.hide()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	var playerPos = $Player.global_position
+	
+	if playerPos == attackPos:
+		pass
+	
+
+func crossLaser():
+	var attackNum = 4
+	
+	for attacks in attackNum:
+		var playerPos = $Player.global_position
+		var attackSprite = Sprite2D.new()
+		attackSprite.texture = load(\"res://Art/Boss/LightCrossAttack.png\")
+		var randX = randf_range(playerPos.x - 1000, playerPos.x + 1000)
+#		-1373, 1838
+		if randX:
+			$Warning.position = Vector2(randX, 687)
+			$Warning.show()
+			$Warning.play(\"Warn\")
+			
+			await get_tree().create_timer(.5).timeout 
+			
+			$Warning.stop()
+			$Warning.hide()
+			
+			attackSprite.position = Vector2(randX, -1000)
+			add_child(attackSprite)
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property(attackSprite, \"position\", Vector2(randX, 1500), 0.60)
+			tween.tween_callback(attackSprite.hide.bind())
+			
+func targetLock():
+	var attackNum = 2
+	
+	for attacks in attackNum:
+		var playerPos = $Player.global_position
+		var attackSprite = Sprite2D.new()
+		attackSprite.texture = load(\"res://Art/Boss/SpearAttack.png\")
+		var randX = randf_range(playerPos.x - 1000, playerPos.x + 1000)
+#		-1373, 1838
+		if randX:
+			$Warning.position = Vector2(playerPos.x, playerPos.y)
+			$Warning.show()
+			$Warning.play(\"Warn\")
+			
+			await get_tree().create_timer(.5).timeout 
+			
+			$Warning.stop()
+			$Warning.hide()
+			if attacks == 1:
+				attackSprite.position = Vector2(-1375, -1000)
+				attackSprite.rotation = PI - PI/4
+			else:
+				attackSprite.position = Vector2(4000, -1000)
+				attackSprite.rotation = PI + PI/4
+				
+			add_child(attackSprite)
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property(attackSprite, \"position\", Vector2(playerPos.x, playerPos.y), 0.50)
+			tween.tween_callback(attackSprite.hide.bind())
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wws2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2ij18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ml41p")
+}],
+"loop": 1,
+"name": &"Hurt",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+size = Vector2(4252, 126.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wws2h"]
+size = Vector2(182, 976)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lyqe"]
+atlas = ExtResource("4_231t4")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ij18"]
+atlas = ExtResource("4_231t4")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfi2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lyqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ij18")
+}],
+"loop": 1,
+"name": &"Warn",
+"speed": 10.0
+}]
+
 [node name="Castle" type="Node2D" unique_id=1090205509]
+script = SubResource("GDScript_rfi2n")
 
-[node name="ParallaxBackground" type="Node2D" parent="." unique_id=1403351972]
+[node name="CityBuildingLayer" parent="." unique_id=1786326258 instance=ExtResource("1_vm22h")]
 
-[node name="Sky" type="Parallax2D" parent="ParallaxBackground" unique_id=2043453758]
+[node name="Background" type="Node2D" parent="." unique_id=82940429]
+position = Vector2(2141.5, 1025.25)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky" unique_id=460334336]
+[node name="Black2" type="Sprite2D" parent="Background" unique_id=1636178182]
+position = Vector2(-245.5, -1410.25)
+scale = Vector2(6.92, 0.92200005)
+texture = ExtResource("4_2ij18")
 
-[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground" unique_id=560156456]
+[node name="ThroneRoom" type="Sprite2D" parent="Background" unique_id=1712525783]
+position = Vector2(-211.5, -568.25)
+scale = Vector2(1.57, 1.01)
+texture = ExtResource("2_7lyqe")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1113691013]
+[node name="Pillar" type="AnimatedSprite2D" parent="Background" unique_id=661996688]
+position = Vector2(-1329.5, -563.25)
+scale = Vector2(0.667, 1)
+sprite_frames = SubResource("SpriteFrames_wws2h")
+animation = &"Hurt"
+frame_progress = 0.11274617
+
+[node name="Pillar2" type="Sprite2D" parent="Background" unique_id=2059018925]
+position = Vector2(-1996.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="Pillar5" type="Sprite2D" parent="Background" unique_id=2083436507]
+position = Vector2(-2663.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="Pillar6" type="Sprite2D" parent="Background" unique_id=1396162363]
+position = Vector2(-3330.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="Pillar3" type="Sprite2D" parent="Background" unique_id=1257825031]
+position = Vector2(906.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="Pillar4" type="Sprite2D" parent="Background" unique_id=1561376899]
+position = Vector2(1573.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="Pillar7" type="Sprite2D" parent="Background" unique_id=1684035783]
+position = Vector2(2240.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="Black" type="Sprite2D" parent="Background" unique_id=425215900]
+position = Vector2(-199.5, 344.75)
+scale = Vector2(6.92, 0.798)
+texture = ExtResource("4_2ij18")
+
+[node name="Pillar8" type="Sprite2D" parent="Background" unique_id=1979438109]
+position = Vector2(2907.5, -563.25)
+scale = Vector2(0.667, 1)
+texture = ExtResource("3_2ij18")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=488940167]
+collision_layer = 2
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1574380412]
+position = Vector2(1925, 1025.25)
+shape = SubResource("RectangleShape2D_rfi2n")
+
+[node name="LeftBarrier" type="CollisionShape2D" parent="StaticBody2D" unique_id=1012428244]
+position = Vector2(-264, 493)
+shape = SubResource("RectangleShape2D_wws2h")
+
+[node name="LeftBarrier2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1131748602]
+position = Vector2(4143, 478)
+shape = SubResource("RectangleShape2D_wws2h")
+
+[node name="Aeacus" parent="." unique_id=436499756 instance=ExtResource("2_t33uu")]
+position = Vector2(1964, 590)
+
+[node name="Player" parent="." unique_id=962178757 instance=ExtResource("2_1gkcl")]
+position = Vector2(1831, 848)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1324404032]
+scale = Vector2(2, 2)
+offset = Vector2(0, -470)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Warning" type="AnimatedSprite2D" parent="." unique_id=1848868919]
+position = Vector2(-2844, -31.999878)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_rfi2n")
+animation = &"Warn"
+frame = 1
+frame_progress = 0.071658745
+
+[node name="LightCross" type="Sprite2D" parent="." unique_id=1496533340]
+position = Vector2(1908, -2139)
+texture = ExtResource("5_2drs5")

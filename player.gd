@@ -1,16 +1,13 @@
 extends CharacterBody2D
 
 
-var speed = 500.0
-const JUMP_VELOCITY = -400.0
-
+const SPEED = 700.0
+const JUMP_VELOCITY = -600.0
+const DASHSPEED = 1300
+var canDash = true
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("run") and is_on_floor():
-		speed = 1000.0
-	elif not Input.is_action_pressed("run") or not is_on_floor():
-		speed = 500.0
-	
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -24,20 +21,29 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("left"):
 		$AnimatedSprite2D.flip_h = true
-		#$AnimatedSprite2D.play("Walk")
+		$AnimatedSprite2D.play("Run")
 	elif Input.is_action_pressed("right"):
 		$AnimatedSprite2D.flip_h = false
-		#$AnimatedSprite2D.play("Walk")
+		$AnimatedSprite2D.play("Run")
 	else:
 		$AnimatedSprite2D.play("Idle")
 	
 	var direction := Input.get_axis("left", "right")
+	
 	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.x = direction * SPEED
 		
-	if global_position >= Vector2(5450, 1095) and global_position <= Vector2(5720, 1026):
-		pass
+	elif Input.is_action_just_pressed("run") and canDash:
+		velocity.x = direction * DASHSPEED
+		await get_tree().create_timer(1).timeout 
+		canDash = false
+		
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if not canDash:
+		await get_tree().create_timer(1).timeout 
+		canDash = true
+		
 
 	move_and_slide()
