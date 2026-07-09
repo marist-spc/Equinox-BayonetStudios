@@ -1,16 +1,13 @@
 extends CharacterBody2D
 
 
-var speed = 700.0
+const SPEED = 700.0
 const JUMP_VELOCITY = -600.0
-
+const DASHSPEED = 1300
+var canDash = true
 
 func _physics_process(delta: float) -> void:
-	var tween = get_tree().create_tween()
-	
-	if Input.is_action_just_pressed("run"):
-		tween.tween_property($Player, "position", position.x + 200, 1)
-	
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -32,10 +29,21 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Idle")
 	
 	var direction := Input.get_axis("left", "right")
+	
 	if direction:
-		velocity.x = direction * speed
+		velocity.x = direction * SPEED
+		
+	elif Input.is_action_just_pressed("run") and canDash:
+		velocity.x = direction * DASHSPEED
+		await get_tree().create_timer(1).timeout 
+		canDash = false
+		
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if not canDash:
+		await get_tree().create_timer(1).timeout 
+		canDash = true
 		
 
 	move_and_slide()

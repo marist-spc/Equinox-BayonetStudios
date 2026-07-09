@@ -7,8 +7,8 @@
 [sub_resource type="GDScript" id="GDScript_0h3u8"]
 script/source = "extends CharacterBody2D
 
-var attacks = [\"CrossLaser\"]
-#, \"TargetLock\"
+var attacks = [ \"TargetLock\"]
+#\"CrossLaser\",
 var attacking
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,8 +24,11 @@ func _process(_delta: float) -> void:
 	if attacking == true:
 		newAttack = attacks.pick_random()
 		attacking = false
+		$AnimatedSprite2D.play(\"Snap\")
 		if newAttack == \"CrossLaser\":
-			parent.crossLaser(2)
+			parent.crossLaser()
+		elif newAttack == \"TargetLock\":
+			parent.targetLock()
 			
 			
 "
