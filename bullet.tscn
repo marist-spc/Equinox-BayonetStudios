@@ -5,27 +5,42 @@
 [sub_resource type="GDScript" id="GDScript_v7oki"]
 script/source = "extends Area2D
 
+var travel_direction := 1.0
+var is_destroyed := false 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group(\"Bullet\") 
+	self.scale = Vector2(0.3, 0.3)
+	
+	var target_x = global_position.x + (700 * travel_direction)
+	self.rotation = 0 if travel_direction == 1.0 else PI
 
+	var tween = create_tween()
+	tween.tween_property(self, \"global_position:x\", target_x, 0.30)
+	tween.tween_callback(destroy_bullet)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_direction(dir: float) -> void:
+	travel_direction = dir
+
+func destroy_bullet() -> void:
+	if is_destroyed: return
+	is_destroyed = true
+	queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
-size = Vector2(24, 7)
+size = Vector2(121, 36)
 
-[node name="Bullet" type="Area2D" unique_id=820756205]
+[node name="Bullet" type="Area2D" unique_id=820756205 groups=["bullet"]]
+position = Vector2(12, -51)
+collision_layer = 16
+collision_mask = 0
 script = SubResource("GDScript_v7oki")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=572266696]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_v7oki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736114769]
-position = Vector2(-8, -10.5)
+position = Vector2(-40.5, -52)
 shape = SubResource("RectangleShape2D_v8qja")

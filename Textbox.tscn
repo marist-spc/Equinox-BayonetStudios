@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dpwa2ot4yn05r"]
+
+[ext_resource type="Texture2D" uid="uid://5i24cvc3q37w" path="res://Art/NPC/TextBox.png" id="1_k7ve7"]
+[ext_resource type="FontFile" uid="uid://degsslvsct5jo" path="res://Art/NPC/VCR_OSD_MONO_1.001.ttf" id="2_d0rgj"]
+
+[sub_resource type="GDScript" id="GDScript_ss407"]
+resource_name = "textbox.gd"
+script/source = "extends CanvasLayer
+
+@onready var background: NinePatchRect = $NinePatchRect
+@onready var label: Label = $Label
+
+@export var textbox_width: float = 900.0   
+@export var textbox_height: float = 260.0  
+@export var text_speed: float = 0.03
+
+func _ready() -> void:
+	self.hide()
+	
+	# 1. Size the background image box explicitly
+	background.size = Vector2(textbox_width, textbox_height)
+	
+	# 2. Position the textbox layout directly at the top-center of the screen
+	var screen_center_x = (2304.0 / 2.0) - (textbox_width / 2.0)
+	# CHANGED: Replaced bottom screen math with a fixed 60-pixel offset from the top edge
+	var screen_top_y = 60.0 
+	background.position = Vector2(screen_center_x, screen_top_y)
+	
+	# 3. Size and position the text layer inside the background borders
+	label.position = background.position + Vector2(40.0, 30.0)
+	label.size = Vector2(textbox_width - 80.0, textbox_height - 60.0)
+	
+	# 4. Ensure text wrap remains active
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
+
+func display_message(message: String) -> void:
+	self.show()
+	print(\"cool\")
+	label.text = message
+	label.visible_characters = 0
+	
+	var total_characters = message.length()
+	var duration = total_characters * text_speed
+	
+	var tween = create_tween()
+	tween.tween_property(label, \"visible_characters\", total_characters, duration)
+
+func close_textbox() -> void:
+	label.text = \"\"
+	self.hide()
+"
+
+[node name="TextBox" type="CanvasLayer" unique_id=1488941954]
+script = SubResource("GDScript_ss407")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=271969851]
+offset_right = 1002.0
+offset_bottom = 469.0
+size_flags_stretch_ratio = 0.24
+texture = ExtResource("1_k7ve7")
+patch_margin_left = 13
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="." unique_id=756380373]
+offset_left = 43.0
+offset_top = 43.0
+offset_right = 958.0
+offset_bottom = 427.0
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("2_d0rgj")
+theme_override_font_sizes/font_size = 32
+vertical_alignment = 1

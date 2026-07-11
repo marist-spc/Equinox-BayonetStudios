@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://v5pqn1qmhb52"]
+
+[ext_resource type="Texture2D" uid="uid://bx0s8eu8if3wp" path="res://Art/Boss/Warning.png" id="1_wdnif"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdnif"]
+atlas = ExtResource("1_wdnif")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jupec"]
+atlas = ExtResource("1_wdnif")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wws2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdnif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jupec")
+}],
+"loop": 1,
+"name": &"Warn",
+"speed": 5.0
+}]
+
+[node name="Warning" type="AnimatedSprite2D" unique_id=15306944]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_wws2h")
+animation = &"Warn"

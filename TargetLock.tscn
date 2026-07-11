@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dku0g00ludl33"]
+
+[sub_resource type="GDScript" id="GDScript_rfi2n"]
+script/source = "extends Area2D
+
+@onready var sprite = $Sprite2D
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+func start_attack(spawn_pos: Vector2, target_pos: Vector2) -> void:
+	global_position = spawn_pos
+	
+	sprite.texture = load(\"res://Art/Boss/SpearAttack.png\")
+	
+	var base_angle = (target_pos - spawn_pos).angle()
+	
+	rotation = base_angle + (PI / 2) 
+	
+	var tween = create_tween()
+	tween.tween_property(self, \"global_position\", target_pos, 0.50)
+	
+	tween.tween_interval(0.1)
+	tween.tween_callback(queue_free)
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\") or body.has_method(\"take_damage\"):
+		body.take_damage(1)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+
+[node name="Node2D" type="Area2D" unique_id=63309711]
+collision_layer = 2
+script = SubResource("GDScript_rfi2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=184522008]
+shape = SubResource("RectangleShape2D_rfi2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060921989]
