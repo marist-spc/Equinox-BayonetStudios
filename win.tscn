@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bov54ybuc0vxo"]
+
+[ext_resource type="FontFile" uid="uid://degsslvsct5jo" path="res://Art/NPC/VCR_OSD_MONO_1.001.ttf" id="1_wao2c"]
+
+[sub_resource type="GDScript" id="GDScript_rfi2n"]
+resource_name = "hud.gd"
+script/source = "extends CanvasLayer
+
+func _on_restart_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://hud.tscn\")
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="Win" type="CanvasLayer" unique_id=82373224]
+script = SubResource("GDScript_rfi2n")
+
+[node name="Message" type="Label" parent="." unique_id=603998170]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 200.0
+offset_right = 20.0
+offset_bottom = 288.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wao2c")
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayAgainButton" type="Button" parent="." unique_id=538081939]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -596.0
+offset_right = 150.0
+offset_bottom = -446.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wao2c")
+theme_override_font_sizes/font_size = 64
+text = "Play Again"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="." unique_id=798955351]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.5
+offset_top = -396.0
+offset_right = 160.5
+offset_bottom = -246.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wao2c")
+theme_override_font_sizes/font_size = 64
+text = "Quit
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_restart_button_pressed"]

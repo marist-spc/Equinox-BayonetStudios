@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dhlrovddgslf4"]
+
+[ext_resource type="Texture2D" uid="uid://dpo0glsat6kuc" path="res://Art/Boss/LightCrossAttack.png" id="1_t0dib"]
+
+[sub_resource type="GDScript" id="GDScript_t0dib"]
+script/source = "extends Area2D
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+func start_attack(target_x: float):
+	self.global_position = Vector2(target_x, -1000)
+	self.show()
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, \"global_position:y\", 3000.0, 0.60)
+	
+	await tween.finished
+	queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\") or body.has_method(\"take_damage\"):
+		body.take_damage(1)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+size = Vector2(587, 813)
+
+[node name="CrossLight" type="Area2D" unique_id=1674435216]
+collision_layer = 2
+script = SubResource("GDScript_t0dib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853349936]
+shape = SubResource("RectangleShape2D_rfi2n")
+
+[node name="Beam" type="Sprite2D" parent="." unique_id=1004609652]
+scale = Vector2(1.1830001, 1.151)
+texture = ExtResource("1_t0dib")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://da77uen8anjrq"]
+
+[ext_resource type="Texture2D" uid="uid://bbj241i1lasr6" path="res://Art/UI/hp heart.png" id="3_u6ohr"]
+
+[sub_resource type="GDScript" id="GDScript_rfi2n"]
+script/source = "extends Control
+
+@onready var hearts_container = $HBoxContainer
+
+func _ready() -> void:
+	# Listen to the global event bus for when the player gets hit
+	Signals.player_hit.connect(_on_player_damaged)
+
+func _on_player_damaged(_amount: int) -> void:
+	# Access the current health value from the Player node group safely
+	var player_node = get_tree().get_first_node_in_group(\"Player\")
+	if player_node:
+		update_hearts(player_node.health)
+
+func update_hearts(current_health: int) -> void:
+	var hearts = hearts_container.get_children()
+	
+	# Loop through your 4 heart slots and hide them if health falls below their index
+	for i in range(hearts.size()):
+		if i < current_health:
+			hearts[i].show()
+		else:
+			hearts[i].hide()
+"
+
+[node name="HealthHUD" type="Control" unique_id=1475072931]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_rfi2n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=432496362]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heart1" type="TextureRect" parent="HBoxContainer" unique_id=689516647]
+layout_mode = 2
+texture = ExtResource("3_u6ohr")
+
+[node name="Heart2" type="TextureRect" parent="HBoxContainer" unique_id=1477546642]
+layout_mode = 2
+texture = ExtResource("3_u6ohr")
+
+[node name="Heart3" type="TextureRect" parent="HBoxContainer" unique_id=1520263595]
+layout_mode = 2
+texture = ExtResource("3_u6ohr")
+
+[node name="Heart4" type="TextureRect" parent="HBoxContainer" unique_id=1036196066]
+layout_mode = 2
+texture = ExtResource("3_u6ohr")

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bihwbokts4sru"]
+
+[sub_resource type="GDScript" id="GDScript_wws2h"]
+resource_name = "Dialogue.gd"
+script/source = "extends Area2D
+
+@export var dialogue_text: String = \"\"
+@export var is_teleport_zone: bool = false
+
+var textbox_scene = preload(\"res://Textbox.tscn\")
+var textbox_instance
+
+func _ready() -> void:
+	add_to_group(\"DialogueZones\")
+	
+	if textbox_scene:
+		textbox_instance = textbox_scene.instantiate()
+		
+		# FIX: Instead of add_child(textbox_instance), we add it to the top-level scene root.
+		# This allows the CanvasLayer to float perfectly over your game screen.
+		get_tree().root.call_deferred(\"add_child\", textbox_instance)
+
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\") or body.name == \"Player\" or body.has_method(\"shoot_bullet\"):
+		if dialogue_text != \"\" and textbox_instance:
+			textbox_instance.display_message(dialogue_text)
+			
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group(\"Player\") or body.name == \"Player\" or body.has_method(\"shoot_bullet\"):
+		if textbox_instance:
+			textbox_instance.close_textbox()
+
+# Memory Cleanup: Removes the screen layer if this zone is destroyed
+func _exit_tree() -> void:
+	if is_instance_valid(textbox_instance):
+		textbox_instance.queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+
+[node name="DialogueZone" type="Area2D" unique_id=129734441]
+collision_layer = 4
+script = SubResource("GDScript_wws2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=888850134]
+shape = SubResource("RectangleShape2D_rfi2n")

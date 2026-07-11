@@ -4,101 +4,75 @@
 [ext_resource type="PackedScene" uid="uid://glvwn6grmp43" path="res://player.tscn" id="2_1gkcl"]
 [ext_resource type="Texture2D" uid="uid://dyhdlje7us44r" path="res://Art/Boss/Throne room.png" id="2_7lyqe"]
 [ext_resource type="PackedScene" uid="uid://dhqpo1vrmcyfu" path="res://aeacus.tscn" id="2_t33uu"]
-[ext_resource type="Texture2D" uid="uid://bor4reuy4ubo6" path="res://Art/Boss/Pillar.png" id="3_2ij18"]
 [ext_resource type="Texture2D" uid="uid://bp1m2g6p6j5g2" path="res://Art/Boss/Black.png" id="4_2ij18"]
-[ext_resource type="Texture2D" uid="uid://bx0s8eu8if3wp" path="res://Art/Boss/Warning.png" id="4_231t4"]
 [ext_resource type="Texture2D" uid="uid://dpo0glsat6kuc" path="res://Art/Boss/LightCrossAttack.png" id="5_2drs5"]
-[ext_resource type="Texture2D" uid="uid://4g21dehfox2v" path="res://Art/Boss/Pillar hurt.png" id="5_ml41p"]
+[ext_resource type="PackedScene" uid="uid://v5pqn1qmhb52" path="res://warning.tscn" id="7_sv7do"]
+[ext_resource type="PackedScene" uid="uid://cprmypla43i3w" path="res://Pillars.tscn" id="10_0phrv"]
+[ext_resource type="Texture2D" uid="uid://dvdnyvyu5jb5" path="res://Art/Boss/starwalker.png" id="11_0phrv"]
+[ext_resource type="Texture2D" uid="uid://wtcpku7dej37" path="res://Art/Boss/red-brick-wall.jpg" id="11_a1lti"]
+[ext_resource type="Texture2D" uid="uid://5i24cvc3q37w" path="res://Art/NPC/TextBox.png" id="11_nmuqh"]
+[ext_resource type="FontFile" uid="uid://degsslvsct5jo" path="res://Art/NPC/VCR_OSD_MONO_1.001.ttf" id="12_val57"]
 
 [sub_resource type="GDScript" id="GDScript_rfi2n"]
 script/source = "extends Node2D
 
-var attackPos
-# Called when the node enters the scene tree for the first time.
+var crossLight = preload(\"res://CrossLight.tscn\")
+var targetLockAttack = preload(\"res://TargetLock.tscn\")
 func _ready() -> void:
 	$Warning.hide()
 	$LightCross.hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var playerPos = $Player.global_position
-	
-	if playerPos == attackPos:
-		pass
-	
+	pass
 
 func crossLaser():
-	var attackNum = 4
-	
+	var attackNum = 8
 	for attacks in attackNum:
-		var playerPos = $Player.global_position
-		var attackSprite = Sprite2D.new()
-		attackSprite.texture = load(\"res://Art/Boss/LightCrossAttack.png\")
-		var randX = randf_range(playerPos.x - 1000, playerPos.x + 1000)
-#		-1373, 1838
-		if randX:
-			$Warning.position = Vector2(randX, 687)
-			$Warning.show()
-			$Warning.play(\"Warn\")
-			
-			await get_tree().create_timer(.5).timeout 
-			
-			$Warning.stop()
-			$Warning.hide()
-			
-			attackSprite.position = Vector2(randX, -1000)
-			add_child(attackSprite)
-			
-			var tween = get_tree().create_tween()
-			tween.tween_property(attackSprite, \"position\", Vector2(randX, 1500), 0.60)
-			tween.tween_callback(attackSprite.hide.bind())
-			
-func targetLock():
-	var attackNum = 2
-	
-	for attacks in attackNum:
-		var playerPos = $Player.global_position
-		var attackSprite = Sprite2D.new()
-		attackSprite.texture = load(\"res://Art/Boss/SpearAttack.png\")
-		var randX = randf_range(playerPos.x - 1000, playerPos.x + 1000)
-#		-1373, 1838
-		if randX:
-			$Warning.position = Vector2(playerPos.x, playerPos.y)
-			$Warning.show()
-			$Warning.play(\"Warn\")
-			
-			await get_tree().create_timer(.5).timeout 
-			
-			$Warning.stop()
-			$Warning.hide()
-			if attacks == 1:
-				attackSprite.position = Vector2(-1375, -1000)
-				attackSprite.rotation = PI - PI/4
-			else:
-				attackSprite.position = Vector2(4000, -1000)
-				attackSprite.rotation = PI + PI/4
-				
-			add_child(attackSprite)
-			
-			var tween = get_tree().create_tween()
-			tween.tween_property(attackSprite, \"position\", Vector2(playerPos.x, playerPos.y), 0.50)
-			tween.tween_callback(attackSprite.hide.bind())
-"
+		var warning = $Warning
+		var randX = randf_range(-200, 4000)
+		
+		warning.global_position = Vector2(randX, 687)
+		warning.show()
+		warning.play(\"Warn\")
+		
+		await get_tree().create_timer(.5).timeout
+		warning.stop()
+		warning.hide()
+		
+		var new_attack = crossLight.instantiate()
+		get_parent().add_child(new_attack) 
+		
+		new_attack.start_attack(randX) 
+		
+		await get_tree().create_timer(0.2).timeout
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wws2h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_2ij18")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ml41p")
-}],
-"loop": 1,
-"name": &"Hurt",
-"speed": 10.0
-}]
+func targetLock():
+	var attackNum = 4
+	for attacks in attackNum:
+		var playerPos = $Player.global_position
+		
+		$Warning.global_position = playerPos
+		$Warning.show()
+		$Warning.play(\"Warn\")
+		
+		await get_tree().create_timer(.5).timeout
+		$Warning.stop()
+		$Warning.hide()
+		
+		var spawn_pos: Vector2
+		if attacks == 1:
+			spawn_pos = Vector2(-1375, -1000)
+		else:
+			spawn_pos = Vector2(4000, -1000)
+			
+		var new_spear: Area2D = targetLockAttack.instantiate()
+		get_parent().add_child(new_spear)
+		
+		new_spear.start_attack(spawn_pos, playerPos)
+		
+		await get_tree().create_timer(0.4).timeout
+		
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
 size = Vector2(4252, 126.5)
@@ -106,26 +80,68 @@ size = Vector2(4252, 126.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wws2h"]
 size = Vector2(182, 976)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7lyqe"]
-atlas = ExtResource("4_231t4")
-region = Rect2(0, 0, 1000, 1000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1lti"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(0, 0, 92, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ij18"]
-atlas = ExtResource("4_231t4")
-region = Rect2(0, 1000, 1000, 1000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmuqh"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(92, 0, 92, 92)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rfi2n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_val57"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(184, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb73j"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(276, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2vic"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(368, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0bkf"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(0, 92, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoeh4"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(92, 92, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx51g"]
+atlas = ExtResource("11_0phrv")
+region = Rect2(184, 92, 92, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qnfl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7lyqe")
+"texture": SubResource("AtlasTexture_a1lti")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ij18")
+"texture": SubResource("AtlasTexture_nmuqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_val57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb73j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2vic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0bkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoeh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx51g")
 }],
 "loop": 1,
-"name": &"Warn",
-"speed": 10.0
+"name": &"default",
+"speed": 5.0
 }]
 
 [node name="Castle" type="Node2D" unique_id=1090205509]
@@ -141,92 +157,130 @@ position = Vector2(-245.5, -1410.25)
 scale = Vector2(6.92, 0.92200005)
 texture = ExtResource("4_2ij18")
 
+[node name="Black3" type="Sprite2D" parent="Background" unique_id=273046011]
+position = Vector2(-283.99988, -559.25006)
+scale = Vector2(6.9969997, 2.624)
+texture = ExtResource("4_2ij18")
+
 [node name="ThroneRoom" type="Sprite2D" parent="Background" unique_id=1712525783]
 position = Vector2(-211.5, -568.25)
 scale = Vector2(1.57, 1.01)
 texture = ExtResource("2_7lyqe")
-
-[node name="Pillar" type="AnimatedSprite2D" parent="Background" unique_id=661996688]
-position = Vector2(-1329.5, -563.25)
-scale = Vector2(0.667, 1)
-sprite_frames = SubResource("SpriteFrames_wws2h")
-animation = &"Hurt"
-frame_progress = 0.11274617
-
-[node name="Pillar2" type="Sprite2D" parent="Background" unique_id=2059018925]
-position = Vector2(-1996.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
-
-[node name="Pillar5" type="Sprite2D" parent="Background" unique_id=2083436507]
-position = Vector2(-2663.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
-
-[node name="Pillar6" type="Sprite2D" parent="Background" unique_id=1396162363]
-position = Vector2(-3330.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
-
-[node name="Pillar3" type="Sprite2D" parent="Background" unique_id=1257825031]
-position = Vector2(906.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
-
-[node name="Pillar4" type="Sprite2D" parent="Background" unique_id=1561376899]
-position = Vector2(1573.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
-
-[node name="Pillar7" type="Sprite2D" parent="Background" unique_id=1684035783]
-position = Vector2(2240.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
 
 [node name="Black" type="Sprite2D" parent="Background" unique_id=425215900]
 position = Vector2(-199.5, 344.75)
 scale = Vector2(6.92, 0.798)
 texture = ExtResource("4_2ij18")
 
-[node name="Pillar8" type="Sprite2D" parent="Background" unique_id=1979438109]
-position = Vector2(2907.5, -563.25)
-scale = Vector2(0.667, 1)
-texture = ExtResource("3_2ij18")
+[node name="Pillar1" parent="." unique_id=535189403 instance=ExtResource("10_0phrv")]
+position = Vector2(152, 462)
+scale = Vector2(0.8, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=488940167]
+[node name="Pillar2" parent="." unique_id=687583422 instance=ExtResource("10_0phrv")]
+position = Vector2(787, 462)
+scale = Vector2(0.8, 1)
+
+[node name="Pillar3" parent="." unique_id=1479551106 instance=ExtResource("10_0phrv")]
+position = Vector2(3063, 462)
+scale = Vector2(0.8, 1)
+
+[node name="Pillar4" parent="." unique_id=969387093 instance=ExtResource("10_0phrv")]
+position = Vector2(3803, 460)
+scale = Vector2(0.8, 1)
+
+[node name="colliders" type="StaticBody2D" parent="." unique_id=488940167]
 collision_layer = 2
 
-[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=1574380412]
+[node name="Floor" type="CollisionShape2D" parent="colliders" unique_id=1574380412]
 position = Vector2(1925, 1025.25)
 shape = SubResource("RectangleShape2D_rfi2n")
 
-[node name="LeftBarrier" type="CollisionShape2D" parent="StaticBody2D" unique_id=1012428244]
+[node name="LeftBarrier" type="CollisionShape2D" parent="colliders" unique_id=1012428244]
 position = Vector2(-264, 493)
 shape = SubResource("RectangleShape2D_wws2h")
 
-[node name="LeftBarrier2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1131748602]
+[node name="LeftBarrier2" type="CollisionShape2D" parent="colliders" unique_id=1131748602]
 position = Vector2(4143, 478)
 shape = SubResource("RectangleShape2D_wws2h")
 
 [node name="Aeacus" parent="." unique_id=436499756 instance=ExtResource("2_t33uu")]
-position = Vector2(1964, 590)
+position = Vector2(1949, 550)
+
+[node name="RedBrickWall" type="Sprite2D" parent="." unique_id=518711737]
+position = Vector2(1892.0002, -1308)
+scale = Vector2(1.5615164, 1)
+texture = ExtResource("11_a1lti")
 
 [node name="Player" parent="." unique_id=962178757 instance=ExtResource("2_1gkcl")]
-position = Vector2(1831, 848)
+position = Vector2(1983, 844)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1324404032]
 scale = Vector2(2, 2)
 offset = Vector2(0, -470)
 zoom = Vector2(0.8, 0.8)
 
-[node name="Warning" type="AnimatedSprite2D" parent="." unique_id=1848868919]
-position = Vector2(-2844, -31.999878)
-scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_rfi2n")
-animation = &"Warn"
-frame = 1
-frame_progress = 0.071658745
+[node name="Warning" parent="." unique_id=153051801 instance=ExtResource("7_sv7do")]
+position = Vector2(-2562.9998, -271.99997)
 
 [node name="LightCross" type="Sprite2D" parent="." unique_id=1496533340]
-position = Vector2(1908, -2139)
+position = Vector2(5566, -1767)
 texture = ExtResource("5_2drs5")
+
+[node name="The Original          Starwalker" type="AnimatedSprite2D" parent="." unique_id=1247247401]
+position = Vector2(6773, -763)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_4qnfl")
+frame_progress = 0.9920745
+
+[node name="BossSpeak" type="CanvasLayer" parent="." unique_id=1679712322 groups=["Text"]]
+offset = Vector2(2100, -50)
+transform = Transform2D(1, 0, 0, 1, 2100, -50)
+follow_viewport_enabled = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BossSpeak" unique_id=745695795]
+anchors_preset = -1
+anchor_right = 0.43500003
+anchor_bottom = 0.363
+offset_right = 0.75994873
+offset_bottom = -0.44799805
+texture = ExtResource("11_nmuqh")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="BossSpeak" unique_id=145860848]
+offset_left = 53.0
+offset_top = 57.0
+offset_right = 946.0
+offset_bottom = 412.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("12_val57")
+theme_override_font_sizes/font_size = 64
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HeroSpeak" type="CanvasLayer" parent="." unique_id=1504501273 groups=["Text"]]
+offset = Vector2(800, 200)
+transform = Transform2D(1, 0, 0, 1, 800, 200)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HeroSpeak" unique_id=1719211532]
+anchors_preset = -1
+anchor_right = 0.43500003
+anchor_bottom = 0.363
+offset_right = 0.75994873
+offset_bottom = -0.44799805
+texture = ExtResource("11_nmuqh")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HeroSpeak" unique_id=1967501950]
+offset_left = 53.0
+offset_top = 57.0
+offset_right = 946.0
+offset_bottom = 412.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("12_val57")
+theme_override_font_sizes/font_size = 64
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

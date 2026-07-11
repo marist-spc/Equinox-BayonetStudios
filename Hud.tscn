@@ -1,57 +1,76 @@
-[gd_scene format=3 uid="uid://da77uen8anjrq"]
+[gd_scene format=3 uid="uid://i1ow1nchvvym"]
 
-[ext_resource type="Texture2D" uid="uid://5i24cvc3q37w" path="res://Art/NPC/TextBox.png" id="1_d4yu0"]
-[ext_resource type="FontFile" uid="uid://degsslvsct5jo" path="res://Art/NPC/VCR_OSD_MONO_1.001.ttf" id="2_n10im"]
+[ext_resource type="FontFile" uid="uid://degsslvsct5jo" path="res://Art/NPC/VCR_OSD_MONO_1.001.ttf" id="1_37p78"]
 
 [sub_resource type="GDScript" id="GDScript_rfi2n"]
+resource_name = "hud.gd"
 script/source = "extends CanvasLayer
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Opening.tscn\")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-	
-
-func showMessage(text, value):
-	$Message.text = text
-	$Message.show()
-	
-	if $Message.label_settings:
-		$Message.label_settings.font_color = Color.html(value)
-		
-	if text == \"\" or text == null:
-		$TextBox.hide()
-	else:
-		$TextBox.show()
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
 "
 
-[sub_resource type="LabelSettings" id="LabelSettings_n10im"]
-font = ExtResource("2_n10im")
-font_size = 50
-
-[node name="Hud" type="CanvasLayer" unique_id=1643127860]
-follow_viewport_enabled = true
+[node name="Hud" type="CanvasLayer" unique_id=82373224]
 script = SubResource("GDScript_rfi2n")
 
-[node name="TextBox" type="Sprite2D" parent="." unique_id=1672132847]
-position = Vector2(606.5, 220.5)
-scale = Vector2(1.361, 0.561)
-texture = ExtResource("1_d4yu0")
-
-[node name="Message" type="Label" parent="." unique_id=1480770355]
-anchors_preset = -1
-anchor_left = -0.012152778
-anchor_top = -0.023919754
-anchor_right = 0.52126735
-anchor_bottom = 0.06481481
-offset_right = 40.0
-offset_bottom = 88.0
-label_settings = SubResource("LabelSettings_n10im")
+[node name="Message" type="Label" parent="." unique_id=603998170]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 200.0
+offset_right = 20.0
+offset_bottom = 288.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 100
+text = "Equinox"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="Button" parent="." unique_id=538081939]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -596.0
+offset_right = 150.0
+offset_bottom = -446.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="." unique_id=1983178446]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.5
+offset_top = -396.0
+offset_right = 160.5
+offset_bottom = -246.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 64
+text = "Quit
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

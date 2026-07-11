@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cprmypla43i3w"]
+
+[ext_resource type="Texture2D" uid="uid://bor4reuy4ubo6" path="res://Art/Boss/Pillar.png" id="1_a5b7o"]
+
+[sub_resource type="GDScript" id="GDScript_wws2h"]
+resource_name = "Pillar.gd"
+script/source = "extends Area2D
+
+@export var max_health: int = 8
+
+var current_health: int
+
+func _ready() -> void:
+	current_health = max_health
+	add_to_group(\"Pillars\")
+	area_entered.connect(_on_area_entered)
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group(\"Bullet\"):
+		if area.has_method(\"destroy_bullet\"):
+			if area.is_destroyed: return 
+			area.destroy_bullet()
+		else:
+			area.queue_free()
+			
+		take_damage(1)
+
+func take_damage(amount: int) -> void:
+	current_health -= amount
+	
+	var tween = create_tween()
+	tween.tween_property(self, \"modulate\", Color(2, 0.5, 0.5), 0.08)
+	tween.tween_property(self, \"modulate\", Color.WHITE, 0.08)
+	
+	if current_health <= 0:
+		destroy_pillar()
+
+func destroy_pillar() -> void:
+	remove_from_group(\"Pillars\")
+	
+	var remaining_pillars = get_tree().get_nodes_in_group(\"Pillars\").size()
+	
+	if remaining_pillars == 0:
+		end_game()
+		
+	queue_free()
+
+func end_game() -> void:
+	print(\"All pillars destroyed!\")
+	
+	$\"../Aeacus\".endGame()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfi2n"]
+size = Vector2(557.5, 996)
+
+[node name="Area2D" type="Area2D" unique_id=535189403]
+collision_layer = 8
+collision_mask = 16
+script = SubResource("GDScript_wws2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541134354]
+texture = ExtResource("1_a5b7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=592135093]
+position = Vector2(10.25, -2)
+shape = SubResource("RectangleShape2D_rfi2n")
